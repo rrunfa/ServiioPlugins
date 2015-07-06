@@ -55,7 +55,6 @@ class Goodgame extends WebResourceUrlExtractor {
 
 		def status = root.stream[0].status
 
-		def streamLink = String.format(HLS_URL_FORMAT, channelId, '')
 		def thumbnail = ''
 
 		def isLive = (status == 'Live')
