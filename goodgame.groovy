@@ -79,6 +79,7 @@ class Goodgame extends WebResourceUrlExtractor {
 			items += new WebResourceItem(title: channelName + ' ' + key, additionalInfo: [
 				url: String.format(HLS_URL_FORMAT, channelId, value),
 				live: isLive,
+				cacheKey: channelName + '-hls' + value,
 				thumbnailUrl: thumbnail,
 				expiresImmediately: true
 			])
@@ -136,6 +137,7 @@ class Goodgame extends WebResourceUrlExtractor {
 			c.setContentUrl(item.additionalInfo.url)
 			c.setLive(item.additionalInfo.live)
 			c.setThumbnailUrl(item.additionalInfo.thumbnailUrl)
+			c.setCacheKey(item.additionalInfo.cacheKey)
 		}
 		return c
 	}
