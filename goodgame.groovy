@@ -62,6 +62,8 @@ class Goodgame extends WebResourceUrlExtractor {
 
 		if (isLive) {
 			thumbnail = root.stream[0].thumb.text()
+		} else {
+			throw new RuntimeException('Offline')
 		}
 
 		if (DEBUG) {
